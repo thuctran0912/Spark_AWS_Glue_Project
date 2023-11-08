@@ -129,4 +129,20 @@ Including 3 AWS Glue Tables:
 - `step_trainer_trusted` records count: 
 
 ### Glue Jobs for Trusted zones
+* [customer_landing_to_trusted.py](./Work/python/customer_landing_to_trusted.py) - _Filter protected PII with Spark in Glue Jobs_
+* [accelerometer_landing_to_trusted_zone.py](./Work/python/accelerometer_landing_to_trusted_zone.py) - _Join Privacy tables with Glue Jobs_
+* [step_trainer_landing_to_trusted.py](./Work/python/step_trainer_landing_to_trusted.py) - _Populate `step_trainer_trusted` Glue Table that contains the Step Trainer Records data for customers who have accelerometer data and have agreed to share their data for research_
 
+_**Trusted Glue Tables**_ 
+
+*  `customer_trusted` table: 
+
+    <img src="./images/customer_trusted.png">
+
+    <img src="./images/customer_trusted_2.png">
+
+### Curated Zone
+
+_**Glue Job Scripts:**_ 
+* [customer_trusted_to_curated.py](./Work/python/customer_trusted_to_curated.py)
+* [trainer_trusted_to_curated](./Work/python/trainer_trusted_to_curated.py) - _Populate `machine_learning_curated` Glue Table - an aggregated table that has each of the Step Trainer Readings, and the associated accelerometer reading data for the same timestamp, but only for customers who have agreed to share their data_
